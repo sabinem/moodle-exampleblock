@@ -17,10 +17,23 @@ class block_exampleblock extends block_base {
             $this->content->text = $this->config->text;
         }
 
-        $this->content->text   = 'The content of our SimpleHTML block!';
-        $this->content->footer = 'Footer here...';
+        //$this->content->text   = 'The content of our SimpleHTML block!';
+        $this->content->footer = 'Goodbye for now...';
 
         return $this->content;
 
+    }
+
+    // this block is only allowed on the users dashboard
+    public function applicable_formats() {
+        return array('my' => true);
+    }
+
+    // hide header
+    public function hide_header() {
+        if (! empty($this->config->hidetitle)) {
+            return true;
+        }
+        return false;
     }
 }

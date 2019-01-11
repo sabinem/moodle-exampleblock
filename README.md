@@ -1,7 +1,6 @@
 # Exampleblock
-some moodle block plugin examples
+A moodle block plugin example
 
-Here I will keep some moodle blog plugin examples
-
-This is the most simple block possible. It is inspired by the moodle docs, 
+This block was inspired by:
 see https://docs.moodle.org/dev/Blocks
+
