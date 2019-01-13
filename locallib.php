@@ -66,6 +66,28 @@ function get_config_options_for_switch_in_plugin_settings($key = null)
 }
 
 
+
+// ***************************************************************
+// show block on page helper functions
+// ***************************************************************
+
+function get_block_footer_text($configkey = null){
+
+    // get content of the footer of the block
+    // the footer text depends on whether the block instance has been already set up
+
+    $specialcategory = get_special_category_from_settings();
+    $option = get_config_options_for_switch_in_plugin_settings($key=$configkey);
+    $footertext =
+        "This is a dashboard where the category "
+        . $specialcategory -> name
+        . " is " . get_config_options_for_switch_in_plugin_settings($key=$option);
+
+    return $footertext;
+}
+
+
+
 // ***************************************************************
 // private helper functions
 // ***************************************************************

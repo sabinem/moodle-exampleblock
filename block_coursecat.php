@@ -36,10 +36,9 @@ class block_coursecat extends block_base {
         }
 
         // set the contents footer
-        $this->content->footer =
-            "This is a dashboard where the category "
-            . get_special_category_from_settings() -> name
-            . " is " . get_config_options_for_switch_in_plugin_settings($key=$this->config->selectdashboardtype);
+        if (! empty($this->config->selectdashboardtype)) {
+            $this->content->footer = get_block_footer_text($this->config->selectdashboardtype);
+        }
 
         // return the blocks content
         return $this->content;

@@ -27,7 +27,7 @@ class block_coursecat_edit_form extends block_edit_form {
         //       adding a html text input field to the block
 
         $mform->addElement('text', 'config_text', get_string('blockstring', 'block_coursecat'));
-        $mform->setDefault('config_text', 'default value');
+        $mform->setDefault('config_text', 'This is the Category Dasboard block');
         $mform->setType('config_text', PARAM_RAW);
 
         // second setting field:
@@ -49,5 +49,6 @@ class block_coursecat_edit_form extends block_edit_form {
             'config_selectdashboardtype',
             get_string('categorymeaning', 'block_coursecat', get_special_category_from_settings() -> name),
             get_config_options_for_switch_in_plugin_settings());
+        $mform->setDefault('config_selectdashboardtype', 0);
     }
 }
